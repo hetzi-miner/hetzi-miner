@@ -1,7 +1,7 @@
 # Configuration
 
 hetzi-miner is set up with one config file per coin in the `configs` folder
-(`configs/etc.toml`, `configs/octa.toml`, `configs/ethw.toml`), or with command-line flags,
+(`configs/etc.toml`, `configs/octa.toml`, `configs/ethw.toml`, `configs/qtc.toml`), or with command-line flags,
 or both: flags override the file.
 
 ```
@@ -23,7 +23,7 @@ The `pools` and `logs` folders are shared and live next to the program (one leve
 ## Main settings
 
 ```toml
-coin = "ETC"                 # ETC, OCTA or ETHW
+coin = "ETC"                 # ETC, OCTA, ETHW or QTC
 wallet = "0xYOUR_WALLET"
 worker = "rig1"
 pools = [                    # tried top to bottom; later the miner returns to the first one
@@ -121,7 +121,7 @@ Per-GPU values are comma-separated in `-d` order, `*` skips a GPU: `--moff 1000,
 | `-u`, `--wallet WALLET[.WORKER]` | wallet, optionally with the worker name |
 | `-w`, `--worker NAME` | worker (rig) name |
 | `--pass PASSWORD` | pool password |
-| `-c`, `--coin COIN` | etc (default), octa, ethw |
+| `-c`, `--coin COIN` | etc (default), octa, ethw, qtc |
 | `--tls` | TLS for host:port addresses |
 | `--protocol P` | auto, ethproxy, ethstratum, getwork |
 | `-d`, `--devices 0,1` | GPUs to use |

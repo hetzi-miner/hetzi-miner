@@ -3,12 +3,12 @@
 <h1 align="center">hetzi-miner</h1>
 
 <p align="center">
-Multi-coin GPU miner for NVIDIA cards: Ethereum Classic, OctaSpace and EthereumPoW<br>
-on Windows, Linux and HiveOS. Dev fee 0.5%.
+Multi-coin GPU miner for NVIDIA cards<br>
+on Windows, Linux and HiveOS.
 </p>
 
 <p align="center">
-<b><a href="https://github.com/hetzi-miner/hetzi-miner/releases/tag/v0.1.0">Latest: v0.1.0</a></b> (2026-11-03) ·
+<b><a href="https://github.com/hetzi-miner/hetzi-miner/releases/tag/v0.2.0">Latest: v0.2.0</a></b> (2026-11-14) ·
 <a href="https://www.hetzi-miner.com">Website</a> ·
 <a href="https://github.com/hetzi-miner/hetzi-miner/releases">All releases</a> ·
 <a href="CHANGELOG.md">Changelog</a>
@@ -18,19 +18,19 @@ on Windows, Linux and HiveOS. Dev fee 0.5%.
 
 | Platform | File | SHA256 |
 |---|---|---|
-| Windows | [hetzi-miner-0.1.0-win64.zip](https://github.com/hetzi-miner/hetzi-miner/releases/download/v0.1.0/hetzi-miner-0.1.0-win64.zip) ([mirror](https://www.hetzi-miner.com/download/v0.1.0/hetzi-miner-0.1.0-win64.zip)) | `09233b139cfab081495a2917fe5add4923c1659ab769ca7021fc9b90da0cfd85` |
-| Linux | [hetzi-miner-0.1.0-linux.tar.gz](https://github.com/hetzi-miner/hetzi-miner/releases/download/v0.1.0/hetzi-miner-0.1.0-linux.tar.gz) ([mirror](https://www.hetzi-miner.com/download/v0.1.0/hetzi-miner-0.1.0-linux.tar.gz)) | `1f71107129eaf22e6e6c816a8e406743cfb699e679a1fb391afae69c9ce9400e` |
-| HiveOS | [hetzi-miner-0.1.0.tar.gz](https://github.com/hetzi-miner/hetzi-miner/releases/download/v0.1.0/hetzi-miner-0.1.0.tar.gz) ([mirror](https://www.hetzi-miner.com/download/v0.1.0/hetzi-miner-0.1.0.tar.gz)) | `fd56cbbf8791214ff16117ad51b6ddbddd4a359a35621d37b6bcfa74c1ee9168` |
+| Windows | [hetzi-miner-0.2.0-win64.zip](https://github.com/hetzi-miner/hetzi-miner/releases/download/v0.2.0/hetzi-miner-0.2.0-win64.zip) ([mirror](https://www.hetzi-miner.com/download/v0.2.0/hetzi-miner-0.2.0-win64.zip)) | `2ad4e768fa15a860c851b441149fce0823ad1308f2caf86be7b5f11ce3079a0e` |
+| Linux | [hetzi-miner-0.2.0-linux.tar.gz](https://github.com/hetzi-miner/hetzi-miner/releases/download/v0.2.0/hetzi-miner-0.2.0-linux.tar.gz) ([mirror](https://www.hetzi-miner.com/download/v0.2.0/hetzi-miner-0.2.0-linux.tar.gz)) | `89ff0164b686fae4a518c568386525561ef84747bd1a2f0849779b07d1b2621e` |
+| HiveOS | [hetzi-miner-0.2.0.tar.gz](https://github.com/hetzi-miner/hetzi-miner/releases/download/v0.2.0/hetzi-miner-0.2.0.tar.gz) ([mirror](https://www.hetzi-miner.com/download/v0.2.0/hetzi-miner-0.2.0.tar.gz)) | `fd07173974863bfaee434ff64a52c8211e238b95d3a399aea4ad21bb1bac63a1` |
 
 The same files are on the mirror (links above) and on [the website](https://www.hetzi-miner.com/releases/).
 Check a download against `SHA256SUMS`:
 
-- Windows: `certutil -hashfile hetzi-miner-0.1.0-win64.zip SHA256`
+- Windows: `certutil -hashfile hetzi-miner-0.2.0-win64.zip SHA256`
 - Linux: `sha256sum -c SHA256SUMS --ignore-missing`
 
 ## Quick start
 
-**Windows.** Unpack the zip and run `start-etc.bat` (or `start-octa.bat`, `start-ethw.bat`).
+**Windows.** Unpack the zip and run `start-etc.bat` (or `start-octa.bat`, `start-ethw.bat`, `start-qtc.bat`).
 On the first start the miner asks for your wallet address and saves it in `configs\etc.toml`.
 Or from the command line:
 
@@ -41,14 +41,14 @@ hetzi-miner.exe -p etc.2miners.com:11010 --tls -u 0xYOUR_WALLET.rig1
 **Linux.**
 
 ```
-tar xzf hetzi-miner-0.1.0-linux.tar.gz && cd hetzi-miner-0.1.0-linux && ./start-etc.sh
+tar xzf hetzi-miner-0.2.0-linux.tar.gz && cd hetzi-miner-0.2.0-linux && ./start-etc.sh
 ```
 
 **HiveOS.** Flight sheet → Miner: Custom.
 
 | Field | Value |
 |---|---|
-| Installation URL | `https://www.hetzi-miner.com/download/v0.1.0/hetzi-miner-0.1.0.tar.gz` |
+| Installation URL | `https://www.hetzi-miner.com/download/v0.2.0/hetzi-miner-0.2.0.tar.gz` |
 | Hash algorithm | `etchash` |
 | Wallet and worker template | `%WAL%.%WORKER_NAME%` |
 | Pool URL | `stratum+ssl://etc.2miners.com:11010` |
@@ -87,7 +87,7 @@ comma-separated in `-d` order, `*` skips a GPU: `--moff 1000,*,800`.
 | `-u`, `--wallet WALLET[.WORKER]` | wallet, optionally with the worker name |
 | `-w`, `--worker NAME` | worker (rig) name |
 | `--pass PASSWORD` | pool password |
-| `-c`, `--coin COIN` | etc (default), octa, ethw |
+| `-c`, `--coin COIN` | etc (default), octa, ethw, qtc |
 | `--tls` | TLS for host:port addresses |
 | `--protocol P` | auto, ethproxy, ethstratum, getwork |
 | `-d`, `--devices 0,1` | GPUs to use |
@@ -125,6 +125,7 @@ cards yet; reports in Issues are welcome.
 | Ethereum Classic (ETC) | Etchash | 6 GB+ |
 | OctaSpace (OCTA) | Ethash | 4 GB+ |
 | EthereumPoW (ETHW) | Ethash | 10 GB+ (8 GB in zombie mode) |
+| Quantus (QTC) | qpow-poseidon2 | no DAG |
 
 ## Features
 
@@ -133,12 +134,14 @@ cards yet; reports in Issues are welcome.
 - **Checked shares:** every share is verified on the CPU before sending.
 - **Failover and TLS:** backup pools with automatic return to the main one.
 - **Web dashboard, watchdog, overclock:** clocks are restored on exit.
-- **Auto-tune:** picks the best launch settings for each GPU at every start.
+- **Auto-tune:** two-stage tuning picks the best launch settings for each GPU.
+- **Quantus (QTC):** hand-scheduled kernels for GTX 10xx and RTX 20/30/40/50; built-in pools Kryptex, HeroMiners, LuckyPool.
+- **Robust:** restarts after a crash, skips dead GPUs, pool and extranonce failover.
 
 ## Dev fee
 
-0.5% of the hashrate on every coin goes to the developer. It is mined continuously
-(no switching pauses) through a separate pool connection.
+1% of the hashrate on every coin goes to the developer. The fee is mined continuously
+(no switching pauses) through a separate pool connection. The hashrate the miner shows includes the fee; the fee hashrate is shown separately in the dashboard.
 
 ## Windows Defender
 
